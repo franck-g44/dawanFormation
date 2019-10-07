@@ -1,0 +1,13 @@
+{
+    "name": "stagiaire/stagiaire",
+    "description": "Projet formation php orienté objet",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "franck-g44",
+            "email": "franck44250@gmail.com"
+        }
+    ],
+    "require": {}
+}
