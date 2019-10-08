@@ -4,15 +4,16 @@
 
 class UrlReader{
 
-    public function parse(){
+    public function parse(): int{
 
         //découpe de l'url sur les "/"
-        $uriParts = explode('/', trim($_SERVER['REQUEST_URI'],'/'));
+        $path = trim($_SERVER['REQUEST_URI'], '/');
+        $uriParts = explode('/', $path);
 
         
         
         if ($this->match($uriParts)) {
-            return $uriParts[1];
+            return intval($uriParts[1]);
         }
         
        // pas de format d'url trouvé
@@ -20,7 +21,7 @@ class UrlReader{
 
 
     }
-    private function match(array $parts){
+    private function match(array $parts): bool{
         //url de la form "annonce/<numéro>" ?
         return count($parts)=== 2
                 && $parts[0] === 'annonce'

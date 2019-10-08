@@ -1,27 +1,12 @@
 <?php
 
-require_once '../src/reponse.php';
-require_once '../src/UrlReader.php';
+define('SRC_DIR', _DIR_.'/../src' );
 
-//regarder dans l'url
+require_once SRC_DIR.'/Application.php';
 
-$reader = new UrlReader();
+$app = new Application();
 
+$response = $app->run();
 
-try{
-    $id = $reader->parse();
-
-}
-
-catch(Exception $e){
-    $response = new Response();
-
-    $response->send('cette page n\'existe pas', 404);
-    die;
-}
-
-$response = new Response();
-
-$response->send('coucou, ça marche');
-
+$response->send();
 
