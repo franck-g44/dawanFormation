@@ -28,7 +28,7 @@ class AnnonceLoader{
         if (!annonce){
             throw new NotFoundException('cette annonce existe pas');
         }
-        var_dump($annonce);
+        
         return $annonce;
     }
 
