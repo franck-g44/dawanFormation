@@ -1,6 +1,8 @@
 <?php
 
+namespace App;
 
+use App\Exception\NotFoundException;
 
 class UrlReader{
 
@@ -17,7 +19,7 @@ class UrlReader{
         }
         
        // pas de format d'url trouvé
-        throw new Exception('URL non reconnue');
+        throw new NotFoundException('URL non reconnue');
 
 
     }

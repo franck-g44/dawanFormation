@@ -1,0 +1,21 @@
+{
+    "name": "stagiaire/stagiaire",
+    "description": "Projet formation php orienté objet",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "franck-g44",
+            "email": "franck44250@gmail.com"
+        }
+    ],
+    "autoload":{
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "php" : "~7.2",
+        "ext-json" : "*"
+    }
+}

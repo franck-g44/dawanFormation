@@ -1,12 +1,15 @@
 <?php
 
+namespace App;
+
 class DatabaseConnexion{
 
     private $dsn;
     private $username;
     private $password;
+    private $pdo;
 
-    public function _construct(string $dsn, string $username, srting $password){
+    public function __construct(string $dsn, string $username, string $password){
 
         $this->dsn = $dsn;
         $this->username = $username;
@@ -15,11 +18,11 @@ class DatabaseConnexion{
 
     }
 
-    
-
-
     public function connect(){
 
-        new PDO($this->dsn, $this->username, $this->password);
+        $this->pdo = new \PDO($this->dsn, $this->username, $this->password);
+    }
+    public function getPdo(){
+        return $this->pdo;
     }
 }
